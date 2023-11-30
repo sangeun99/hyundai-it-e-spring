@@ -21,8 +21,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- file upload -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="defaultEncoding" value="utf-8"></beans:property>
+		<beans:property name="maxUploadSize" value="1048575600"></beans:property>
+		<beans:property name="maxUploadSizePerFile" value="20971520"></beans:property>
+		<beans:property name="uploadTempDir" value="file:/C:/dev/upload/tmp"></beans:property>
+		<beans:property name="maxInMemorySize" value="10485756"></beans:property>
+	</beans:bean>
+	
 	<context:component-scan base-package="net.developia.spring02.controller" />
-	
-	
 	
 </beans:beans>
