@@ -4,7 +4,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.developia.spring03.mapper.BoardMapper">
 
-	<select id="getList" resultType="net.developia.spring03.domain.BoardVO">
+	<select id="getList" resultType="BoardVO">
 	<![CDATA[
 	select * from tbl_board where bno > 0
 	]]>
@@ -25,7 +25,7 @@
 		values (#{bno}, #{title}, #{content}, #{writer})
 	</insert>
 
-	<select id="read" resultType="net.developia.spring03.domain.BoardVO">
+	<select id="read" resultType="BoardVO">
 		select bno, title, content, writer, regdate, updatedate from tbl_board where bno=#{bno}
 	</select>
 	
