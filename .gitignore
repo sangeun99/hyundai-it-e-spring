@@ -71,3 +71,8 @@ local.properties
 
 # STS - DB
 root-context.xml
+
+.project
+*/target/*
+.classpath
+.settings
