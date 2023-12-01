@@ -1,6 +1,6 @@
 package net.developia.spring03.mapper;
 
-import java.security.AlgorithmConstraints;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import lombok.extern.log4j.Log4j;
 import net.developia.spring03.domain.BoardVO;
+import net.developia.spring03.domain.Criteria;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
@@ -18,6 +19,16 @@ public class BoardMapperTests {
 	
 	@Autowired
 	private BoardMapper mapper;
+	
+	@Test
+	public void testPaging() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(3);
+		cri.setAmount(10);
+		
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		list.forEach(board -> log.info(board));
+	}
 	
 	@Test
 	public void testGetList() {

@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.developia</groupId>
-	<artifactId>spring02</artifactId>
-	<name>spring02</name>
+	<artifactId>spring03</artifactId>
+	<name>spring03</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
    <properties>

@@ -16,7 +16,7 @@ $(document).ready(function() {
 	});
 	
 	$("button[data-oper='list']").on("click", function(e) {
-		operForm.find("#bno"),remove();
+		operForm.find("#bno").remove();
 		operForm.attr("action", "/board/list");
 		operForm.submit();
 	});
@@ -58,6 +58,8 @@ $(document).ready(function() {
 				
 				<form id='operForm' action="/board/modify" method="get">
 					<input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>'>
+					<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum}"/>'>
+					<input type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
 				</form>
 			</div>
 		</div>
